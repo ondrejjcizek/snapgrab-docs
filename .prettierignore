@@ -1,0 +1,10 @@
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+.eslintrc.cjs
+.gitlab-ci.yml
+README.md
+src/app.html
+static/favicon/site.webmanifest
+svelte.config.js

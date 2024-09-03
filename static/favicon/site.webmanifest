@@ -1,0 +1,7 @@
+{
+    "name": "WDF Agency",
+    "short_name": "WDF Agency",
+    "theme_color": "#132321",
+    "background_color": "#132321",
+    "display": "standalone"
+}

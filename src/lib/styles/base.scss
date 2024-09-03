@@ -1,0 +1,246 @@
+@forward 'breakpoints';
+@forward 'variables';
+
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'PP Right Grotesk Spatial Fine', sans-serif;
+	font-size: 2.2rem;
+	background: var(--color-background);
+	padding: 24px 24px 0;
+	overflow-x: hidden;
+
+	@media (width < 768px) {
+		padding: 24px 0 0;
+	}
+}
+
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+	pointer-events: none;
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+body {
+	#cc-main {
+		display: flex;
+		width: 100%;
+
+		.cm--right {
+			margin-left: 0;
+			margin-right: 24px;
+			@media (width < 768px) {
+				margin-right: 0px;
+				right: unset;
+				left: 50%;
+				transform: translateX(-50%) !important;
+			}
+		}
+
+		.cm--cloud {
+			max-width: fit-content;
+			border: 1px solid var(--color-black);
+			border-radius: 32px;
+			margin-bottom: clamp(12px, 3vw, 24px);
+
+			.cm__btn {
+				font-family: 'PP Right Grotesk Wide', sans-serif;
+				font-weight: 500;
+				min-width: unset;
+				margin: 0;
+				border-radius: 100px;
+				padding: 12px 24px;
+			}
+
+			.cm__btns {
+				border: none;
+
+				span {
+					text-wrap: nowrap;
+				}
+
+				.cm__btn-group:first-child {
+					.cm__btn:first-child {
+						background: var(--color-black);
+						color: white;
+						border: none;
+						outline: 1px solid var(--color-black);
+						outline-offset: -1px;
+
+						@include on-hover {
+							background: white;
+							color: var(--color-black);
+						}
+					}
+
+					.cm__btn:last-child {
+						background: white;
+						color: var(--color-black);
+						border: 1px solid var(--color-black);
+					}
+				}
+			}
+		}
+
+		.cm-wrapper {
+			display: flex;
+			max-width: 400px;
+			width: fit-content;
+			height: fit-content;
+
+			& > .cm {
+				padding: 24px 32px;
+			}
+		}
+
+		.cm__body {
+			gap: clamp(24px, 5vw, 48px);
+			.cm__btns {
+				padding: 0px;
+
+				.cm__btn-group {
+					display: flex;
+					flex-direction: row;
+					gap: 8px;
+					justify-content: space-between;
+				}
+			}
+
+			.cm__texts {
+				padding-top: 0;
+				gap: 8px;
+			}
+		}
+
+		.cm__footer {
+			padding: 0;
+			background: none;
+		}
+
+		.cm__texts {
+			#cm__title {
+				font-family: 'PP Right Grotesk Wide', sans-serif;
+				font-weight: 500;
+				padding: 0;
+			}
+
+			.cm__desc {
+				display: flex;
+				padding: 0;
+				margin: 0;
+				gap: clamp(12px, 3vw, 24px);
+
+				a,
+				button {
+					font-family: 'Montserrat', sans-serif;
+					font-weight: 400;
+					text-decoration: underline;
+					text-decoration-color: var(--color-black);
+					text-underline-offset: 2px;
+					text-decoration-thickness: 1px;
+					padding: 1px;
+					color: var(--color-black);
+					transition: text-decoration 0.3s var(--ease-out-expo);
+					background: none;
+					text-wrap: nowrap;
+
+					@include on-hover {
+						text-decoration-color: transparent;
+					}
+				}
+			}
+		}
+
+		.cm-box {
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	#cc-main .pm {
+		background: white;
+		border-radius: 32px;
+		border: 1px solid var(--color-black);
+
+		.pm__title,
+		.pm__section-title {
+			font-family: 'PP Right Grotesk Wide', sans-serif;
+			font-weight: 500;
+		}
+
+		.pm__section-desc {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 400;
+		}
+
+		.pm__badge {
+			font-family: 'PP Right Grotesk Fine', sans-serif;
+			font-weight: 400;
+		}
+
+		.pm__close-btn {
+			background: var(--color-black);
+			border-radius: 50%;
+
+			span svg {
+				stroke: white;
+			}
+		}
+
+		.pm__section--toggle {
+			border-radius: 20px;
+
+			button {
+				border-radius: 20px;
+			}
+		}
+
+		.pm__footer {
+			.pm__btn {
+				font-family: 'PP Right Grotesk Wide', sans-serif;
+				font-weight: 500;
+				min-width: unset;
+				margin: 0;
+				border-radius: 100px;
+				padding: 12px 24px;
+			}
+			.pm__btn-group:first-of-type {
+				display: flex;
+				gap: 8px;
+
+				.pm__btn {
+					background: var(--color-black);
+					color: white;
+					border: none;
+					outline: 1px solid var(--color-black);
+					outline-offset: -1px;
+
+					@include on-hover {
+						background: white;
+						color: var(--color-black);
+					}
+				}
+			}
+		}
+	}
+}
