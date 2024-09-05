@@ -16,31 +16,23 @@
 <style lang="scss">
 	div {
 		margin: 0 auto;
-		padding-left: $content-padding;
-		padding-right: $content-padding;
-		max-width: $container-width;
+		padding-left: 24px;
+		padding-right: 24px;
+		max-width: 1630px;
 		position: relative;
 		box-sizing: content-box;
 
 		&.slim {
-			max-width: $container-width-slim;
+			max-width: 1440px;
 		}
 
 		&.full {
-			max-width: $container-width-full;
+			max-width: 1920px;
 		}
 
 		&.pure {
 			padding: 0;
 			position: static;
-
-			@include media-md {
-				padding: 0;
-			}
-
-			@include media-lg {
-				padding: 0;
-			}
 		}
 	}
 </style>

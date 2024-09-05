@@ -1,0 +1,12 @@
+.layout {
+	display: grid;
+
+	&--half {
+		grid-template-columns: 1fr 1fr;
+		gap: clamp(32px, 6vw, 64px);
+
+		@include small-wide-max {
+			grid-template-columns: 1fr;
+		}
+	}
+}

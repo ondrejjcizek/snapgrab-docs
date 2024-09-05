@@ -1,0 +1,34 @@
+.tag {
+	background: var(--color-green-500);
+	max-width: fit-content;
+	padding: 2px 8px 4px;
+	border-radius: var(--radius-sm);
+	font-size: 1.2rem;
+	line-height: calc(18 / 12);
+	font-weight: 500;
+	color: var(--color-white);
+	margin-bottom: 16px;
+
+	&--bottomLarge {
+		margin-bottom: 32px;
+
+		@include small-max {
+			margin-top: -8px;
+			margin-bottom: 16px;
+		}
+	}
+
+	&--blue {
+		background: var(--color-blue-500);
+	}
+
+	&--white {
+		background: var(--color-white);
+		color: var(--color-blue-500);
+	}
+
+	&--cream {
+		background: var(--color-cream-200);
+		color: var(--color-blue-700);
+	}
+}

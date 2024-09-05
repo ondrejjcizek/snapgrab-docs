@@ -19,94 +19,94 @@
 </section>
 
 <style lang="scss">
-	section {
-		padding-top: 70px;
-		padding-bottom: 70px;
-		position: relative;
+	// section {
+	// 	padding-top: 70px;
+	// 	padding-bottom: 70px;
+	// 	position: relative;
 
-		@include media-sm {
-			padding-top: 12vw;
-			padding-bottom: 12vw;
-		}
+	// 	@include small-up {
+	// 		padding-top: 12vw;
+	// 		padding-bottom: 12vw;
+	// 	}
 
-		@include media-lg {
-			padding-top: 120px;
-			padding-bottom: 120px;
-		}
+	// 	@include large-up {
+	// 		padding-top: 120px;
+	// 		padding-bottom: 120px;
+	// 	}
 
-		&.slim {
-			@include media-sm {
-				padding-top: 10vw;
-				padding-bottom: 10vw;
-			}
+	// 	&.slim {
+	// 		@include small-up {
+	// 			padding-top: 10vw;
+	// 			padding-bottom: 10vw;
+	// 		}
 
-			@include media-lg {
-				padding-top: 100px;
-				padding-bottom: 100px;
-			}
-		}
+	// 		@include large-up {
+	// 			padding-top: 100px;
+	// 			padding-bottom: 100px;
+	// 		}
+	// 	}
 
-		&.medium {
-			@include media-sm {
-				padding-top: 14.4vw;
-				padding-bottom: 14.4vw;
-			}
+	// 	&.medium {
+	// 		@include small-up {
+	// 			padding-top: 14.4vw;
+	// 			padding-bottom: 14.4vw;
+	// 		}
 
-			@include media-lg {
-				padding-top: 144px;
-				padding-bottom: 144px;
-			}
-		}
+	// 		@include large-up {
+	// 			padding-top: 144px;
+	// 			padding-bottom: 144px;
+	// 		}
+	// 	}
 
-		&.large {
-			@include media-sm {
-				padding-top: 20vw;
-				padding-bottom: 20vw;
-			}
+	// 	&.large {
+	// 		@include small-up {
+	// 			padding-top: 20vw;
+	// 			padding-bottom: 20vw;
+	// 		}
 
-			@include media-lg {
-				padding-top: 200px;
-				padding-bottom: 200px;
-			}
-		}
+	// 		@include large-up {
+	// 			padding-top: 200px;
+	// 			padding-bottom: 200px;
+	// 		}
+	// 	}
 
-		&.appended {
-			padding-top: 0;
+	// 	&.appended {
+	// 		padding-top: 0;
 
-			@include media-sm {
-				padding-top: 0;
-			}
+	// 		@include small-up {
+	// 			padding-top: 0;
+	// 		}
 
-			@include media-lg {
-				padding-top: 0;
-			}
-		}
+	// 		@include large-up {
+	// 			padding-top: 0;
+	// 		}
+	// 	}
 
-		&.prepended {
-			padding-bottom: 0;
+	// 	&.prepended {
+	// 		padding-bottom: 0;
 
-			@include media-sm {
-				padding-bottom: 0;
-			}
+	// 		@include small-up {
+	// 			padding-bottom: 0;
+	// 		}
 
-			@include media-lg {
-				padding-bottom: 0;
-			}
-		}
+	// 		@include large-up {
+	// 			padding-bottom: 0;
+	// 		}
+	// 	}
 
-		&.bare {
-			padding-top: 0;
-			padding-bottom: 0;
+	// 	&.bare {
+	// 		padding-top: 0;
+	// 		padding-bottom: 0;
 
-			@include media-sm {
-				padding-top: 0;
-				padding-bottom: 0;
-			}
+	// 		@include small-up {
+	// 			padding-top: 0;
+	// 			padding-bottom: 0;
+	// 		}
 
-			@include media-lg {
-				padding-top: 0;
-				padding-bottom: 0;
-			}
-		}
-	}
+	// 		@include large-up {
+	// 			padding-top: 0;
+	// 			padding-bottom: 0;
+	// 		}
+	// 	}
+	// }
 </style>

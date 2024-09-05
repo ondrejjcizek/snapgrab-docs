@@ -19,7 +19,6 @@
 				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
 			</div>
 			<div class="testimonials__content">
-				<div class="badge">IVF</div>
 				<p>Love the simplicity of the service and the prompt customer support. We can't imagine working without it.</p>
 				<address>
 					<strong>— Mathilde Lewis</strong>
@@ -32,7 +31,48 @@
 				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
 			</div>
 			<div class="testimonials__content">
-				<div class="badge">IVF</div>
+				<p>
+					Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quas amet
+					consectetur adipisicing elit. Accusamus, quas..
+				</p>
+				<address>
+					<strong>— Mathilde Lewis</strong>
+					<div>Head of Design, Layers</div>
+				</address>
+			</div>
+		</li>
+		<li class="testimonials__slide" aria-hidden="true">
+			<div class="testimonials__image">
+				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
+			</div>
+			<div class="testimonials__content">
+				<p>Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet..</p>
+				<address>
+					<strong>— Mathilde Lewis</strong>
+					<div>Head of Design, Layers</div>
+				</address>
+			</div>
+		</li>
+		<li class="testimonials__slide" aria-hidden="true">
+			<div class="testimonials__image">
+				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
+			</div>
+			<div class="testimonials__content">
+				<p>
+					Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quas dolor sit
+					amet consectetur adipisicing elit. Accusamus, quas
+				</p>
+				<address>
+					<strong>— Mathilde Lewis</strong>
+					<div>Head of Design, Layers</div>
+				</address>
+			</div>
+		</li>
+		<li class="testimonials__slide" aria-hidden="true">
+			<div class="testimonials__image">
+				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
+			</div>
+			<div class="testimonials__content">
 				<p>Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quas.</p>
 				<address>
 					<strong>— Mathilde Lewis</strong>
@@ -45,46 +85,6 @@
 				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
 			</div>
 			<div class="testimonials__content">
-				<div class="badge">IVF</div>
-				<p>Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quas.</p>
-				<address>
-					<strong>— Mathilde Lewis</strong>
-					<div>Head of Design, Layers</div>
-				</address>
-			</div>
-		</li>
-		<li class="testimonials__slide" aria-hidden="true">
-			<div class="testimonials__image">
-				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
-			</div>
-			<div class="testimonials__content">
-				<div class="badge">IVF</div>
-				<p>Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quas.</p>
-				<address>
-					<strong>— Mathilde Lewis</strong>
-					<div>Head of Design, Layers</div>
-				</address>
-			</div>
-		</li>
-		<li class="testimonials__slide" aria-hidden="true">
-			<div class="testimonials__image">
-				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
-			</div>
-			<div class="testimonials__content">
-				<div class="badge">IVF</div>
-				<p>Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quas.</p>
-				<address>
-					<strong>— Mathilde Lewis</strong>
-					<div>Head of Design, Layers</div>
-				</address>
-			</div>
-		</li>
-		<li class="testimonials__slide" aria-hidden="true">
-			<div class="testimonials__image">
-				<img alt="" src="https://picsum.photos/328/328" srcset="https://picsum.photos/656/656 2x" />
-			</div>
-			<div class="testimonials__content">
-				<div class="badge">IVF</div>
 				<p>Love the simplicity of the service and the prompt customer support. We can't imagine working without it. Lorem ipsum dolor sit amet.</p>
 				<address>
 					<strong>— Mathilde Lewis</strong>
@@ -105,6 +105,7 @@
 <style lang="scss">
 	.testimonials {
 		position: relative;
+		border-radius: 12px;
 
 		@media (width < 768px) {
 			margin-bottom: 88px;
@@ -112,6 +113,7 @@
 
 		&__wrapper {
 			display: flex;
+			gap: 24px;
 			flex-wrap: nowrap;
 			justify-content: normal;
 			padding-inline: 0;
@@ -122,6 +124,8 @@
 			touch-action: pan-x pan-y;
 			overflow-y: hidden;
 			scrollbar-width: none;
+			margin: 0 -24px;
+			padding: 0 24px;
 
 			&::-webkit-scrollbar {
 				display: none;
@@ -174,7 +178,7 @@
 				display: block;
 				aspect-ratio: 1 / 1;
 				object-fit: cover;
-				border-radius: 16px;
+				border-radius: 12px;
 			}
 		}
 
@@ -185,7 +189,7 @@
 			overflow: visible;
 
 			p {
-				font-size: clamp(2.4rem, 3.6vw, 3.6rem);
+				font-size: clamp(2.4rem, 3.4vw, 3.4rem);
 				line-height: calc(44 / 36);
 				font-weight: 00;
 				letter-spacing: -0.72px;
@@ -265,10 +269,12 @@
 		}
 
 		&__dots {
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+			transform: translateX(-50%);
 			display: flex;
-			justify-content: center;
 			gap: 8px;
-			margin-top: 12px;
 
 			:global(button) {
 				border: none;
@@ -276,9 +282,14 @@
 				height: 8px;
 				width: 8px;
 				border-radius: 50%;
-				background-color: black;
+				background-color: rgb(228, 228, 231);
 				padding: 0;
 				cursor: pointer;
+				transition: background 0.6s ease;
+
+				&:hover {
+					background-color: rgb(grey, 0.3);
+				}
 			}
 
 			:global(button.is-active) {

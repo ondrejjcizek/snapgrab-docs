@@ -1,0 +1,11 @@
+.badge {
+	color: white;
+	font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+	line-height: calc(28 / 18);
+	font-weight: 600;
+	background: #7f56d9;
+	max-width: fit-content;
+	padding: clamp(6px, 0.8vw, 8px) clamp(12px, 1.6vw, 16px) clamp(5px, 0.7vw, 7px);
+	border-radius: 24px;
+	margin-bottom: clamp(16px, 2.4vw, 24px);
+}

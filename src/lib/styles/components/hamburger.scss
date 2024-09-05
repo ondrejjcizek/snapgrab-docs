@@ -1,0 +1,73 @@
+.hamburger {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	@media (width >= 1439px) {
+		display: none;
+	}
+
+	.button {
+		padding: 7px 16px 9px;
+		font-size: 1.4rem;
+		line-height: calc(20 / 14);
+	}
+
+	&__wrapper {
+		position: relative;
+		top: 0;
+		z-index: 1000;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		-webkit-tap-highlight-color: rgba(0, 0, 0.7, 0%);
+		transition: left 0.6s $easeOutExpo;
+		left: 0;
+
+		@include small-wide-max {
+			.is-nav-open & {
+				left: -10px;
+			}
+		}
+	}
+
+	&__stick {
+		width: 50%;
+		height: 2px;
+		background: white;
+		border-radius: 3px;
+		transform: translate(0, 0);
+		transition:
+			transform 0.6s $easeOutExpo,
+			background 0.6s $easeOutExpo;
+
+		&:is(.home-Page &) {
+			&:not(.is-hero-active &) {
+				background: var(--color-text);
+			}
+		}
+
+		&:not(.home-Page &) {
+			background: var(--color-text);
+		}
+
+		&:nth-child(1) {
+			.is-nav-open & {
+				transform: translate(0, 3.5px) rotate(45deg);
+				background: var(--color-text);
+			}
+		}
+
+		&:nth-child(2) {
+			.is-nav-open & {
+				transform: translate(0, -3.5px) rotate(-45deg);
+				background: var(--color-text);
+			}
+		}
+	}
+}

@@ -1,0 +1,217 @@
+.tab-nav {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		transform: translateY(-50%);
+		right: -32px;
+		height: 40px;
+		width: 150px;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0%) 0%, rgba(252, 248, 244, 100%) 100%);
+		opacity: 0;
+		transition: opacity 2s $easeOutExpo;
+		pointer-events: none;
+
+		@include small-wide-max {
+			top: clamp(8px, 5vw, 48px);
+			right: -24px;
+		}
+
+		@include large-up {
+			display: none;
+		}
+	}
+
+	&:has(.is-scrollable) {
+		&:after {
+			opacity: 1;
+		}
+	}
+
+	&:has(.is-scroll-end) {
+		&:after {
+			opacity: 0;
+		}
+	}
+
+	&:has(.disclosure) {
+		.tab-nav__wrapper {
+			padding-bottom: 0;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		display: flex;
+		overflow-x: scroll;
+		gap: 8px;
+		justify-content: flex-start;
+		scrollbar-width: none;
+		max-width: fit-content;
+		width: calc(100% + 32px);
+		padding: 0 clamp(24px, 3vw, 32px) clamp(40px, 7vw, 72px);
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		@include small-wide-max {
+			width: calc(100% + 48px);
+			left: -24px;
+		}
+
+		@include large-up {
+			max-width: 1200px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		button,
+		a {
+			color: var(--color-blue-500);
+			padding: 8px 16px;
+			font-weight: 600;
+			font-size: 1.6rem;
+			white-space: nowrap;
+			line-height: calc(24 / 16);
+			border-radius: var(--radius-sm);
+			background: transparent;
+			cursor: pointer;
+			transition:
+				color 0.6s $easeOutExpo,
+				background 0.6s $easeOutExpo;
+
+			@include hover {
+				color: var(--color-blue-600);
+				background: var(--color-cream-50);
+			}
+
+			&.is-active {
+				color: var(--color-blue-600);
+				background: var(--color-cream-50);
+			}
+		}
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(394px, 1fr));
+		gap: 16px;
+		margin: clamp(0px, 3vw, 32px) 0;
+		transition: height 0.6s $easeOutExpo;
+
+		@include small-max {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&:has(.dialog) {
+			grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+			gap: 64px 32px;
+			margin: 0;
+		}
+
+		& > .disclosure {
+			display: none;
+
+			&.is-active {
+				display: flex;
+			}
+		}
+
+		& > .dialog {
+			display: none;
+
+			&.is-active {
+				display: flex;
+			}
+
+			&-wrapper {
+				border-radius: var(--radius-xl);
+				max-width: 909px;
+
+				button[data-ref='close'] {
+					width: clamp(30px, 5vw, 48px);
+					height: clamp(30px, 5vw, 48px);
+					top: clamp(8px, 2.5vw, 32px);
+					right: clamp(8px, 2.5vw, 32px);
+					background: white;
+					border-radius: var(--radius-base);
+
+					i {
+						font-size: 2rem;
+					}
+
+					@include hover {
+						i {
+							opacity: 1;
+						}
+					}
+				}
+
+				img {
+					max-width: 280px;
+				}
+			}
+
+			&-content {
+				display: flex;
+				flex-direction: column;
+				padding: 48px;
+
+				header {
+					display: flex;
+					align-items: center;
+					gap: 24px;
+
+					img {
+						border-radius: var(--radius-base);
+					}
+
+					& > div {
+						h4 {
+							font-size: 3rem;
+							color: var(--color-blue-500);
+							margin-bottom: 8px;
+						}
+
+						p {
+							font-size: 2rem;
+							line-height: calc(30 / 20);
+							margin-bottom: 24px;
+						}
+
+						& > div {
+							display: flex;
+							gap: 20px;
+
+							i {
+								font-size: 2.4rem;
+								color: var(--color-blue-200);
+								transition: color 0.6s $easeOutExpo;
+
+								@include hover {
+									color: var(--color-blue-400);
+								}
+							}
+						}
+					}
+				}
+
+				& > div {
+					span {
+						display: flex;
+						background: var(--color-cream-50);
+						font-weight: 600;
+						padding: 16px;
+						margin: 32px 0;
+						line-height: calc(24 / 16);
+						border-radius: var(--radius-base);
+					}
+				}
+			}
+		}
+	}
+}

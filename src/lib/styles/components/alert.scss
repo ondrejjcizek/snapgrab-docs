@@ -1,0 +1,14 @@
+.alert {
+	background: var(--color-green-25);
+	color: var(--color-green-500);
+	padding: 16px;
+	text-align: center;
+	border-radius: var(--radius-base);
+	margin-bottom: 40px;
+
+	@include small-wide-max {
+		margin-bottom: 24px;
+		font-size: 2rem;
+		line-height: calc(30 / 20);
+	}
+}

@@ -1,4 +1,6 @@
-@import 'fantasticon/fantasticon.css';
-@import 'fonts';
-@import 'base';
-@import 'normalize';
+@import 'fantasticon/fantasticon';
+// @import 'utils/**/*';
+@import 'base/**/*';
+@import 'plugins/**/*';
+@import 'components/**/*';
+@import 'partials/**/*';

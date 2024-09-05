@@ -1,0 +1,214 @@
+$base-font-size: 16px;
+
+@function px-to-em($px-value) {
+	@return calc($px-value / 16 * 1em);
+}
+
+$viewports: (
+	xsmall: (
+		min: px-to-em(0),
+		max: px-to-em(359),
+	),
+	small: (
+		min: px-to-em(360),
+		max: px-to-em(539),
+	),
+	smallWide: (
+		min: px-to-em(540),
+		max: px-to-em(767),
+	),
+	medium: (
+		min: px-to-em(768),
+		max: px-to-em(1023),
+	),
+	large: (
+		min: px-to-em(1024),
+		max: px-to-em(1199),
+	),
+	xlarge: (
+		min: px-to-em(1200),
+		max: px-to-em(1499),
+	),
+	xxlarge: (
+		min: px-to-em(1500),
+		max: px-to-em(1819),
+	),
+	xxxlarge: (
+		min: px-to-em(1820),
+	),
+);
+
+/* stylelint-disable scss/no-global-function-names */
+@mixin xsmall-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, xsmall), min)}) {
+		@content;
+	}
+}
+
+@mixin xsmall-only {
+	@media screen and (min-width: #{map-get(map-get($viewports, xsmall), min)}) and (max-width: #{map-get(map-get($viewports, xsmall), max)}) {
+		@content;
+	}
+}
+
+@mixin xsmall-max {
+	@media screen and (max-width: #{map-get(map-get($viewports, xsmall), max)}) {
+		@content;
+	}
+}
+
+@mixin small-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, small), min)}) {
+		@content;
+	}
+}
+
+@mixin small-only {
+	@media screen and (min-width: #{map-get(map-get($viewports, small), min)}) and (max-width: #{map-get(map-get($viewports, small), max)}) {
+		@content;
+	}
+}
+
+@mixin small-max {
+	@media screen and (max-width: #{map-get(map-get($viewports, small), max)}) {
+		@content;
+	}
+}
+
+@mixin small-wide-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, smallWide), min)}) {
+		@content;
+	}
+}
+
+@mixin small-wide-only {
+	@media screen and (min-width: #{map-get(map-get($viewports, smallWide), min)}) and (max-width: #{map-get(map-get($viewports, smallWide), max)}) {
+		@content;
+	}
+}
+
+@mixin small-wide-max {
+	@media screen and (max-width: #{map-get(map-get($viewports, smallWide), max)}) {
+		@content;
+	}
+}
+
+@mixin medium-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, medium), min)}) {
+		@content;
+	}
+}
+
+@mixin medium-only {
+	@media screen and (min-width: #{map-get(map-get($viewports, medium), min)}) and (max-width: #{map-get(map-get($viewports, medium), max)}) {
+		@content;
+	}
+}
+
+@mixin medium-max {
+	@media screen and (max-width: #{map-get(map-get($viewports, medium), max)}) {
+		@content;
+	}
+}
+
+@mixin large-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, large), min)}) {
+		@content;
+	}
+}
+
+@mixin large-only {
+	@media screen and (min-width: #{map-get(map-get($viewports, large), min)}) and (max-width: #{map-get(map-get($viewports, large), max)}) {
+		@content;
+	}
+}
+
+@mixin large-max {
+	@media screen and (max-width: #{map-get(map-get($viewports, large), max)}) {
+		@content;
+	}
+}
+
+@mixin xlarge-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, xlarge), min)}) {
+		@content;
+	}
+}
+
+@mixin xlarge-only {
+	@media screen and (min-width: #{map-get(map-get($viewports, xlarge), min)}) and (max-width: #{map-get(map-get($viewports, xlarge), max)}) {
+		@content;
+	}
+}
+
+@mixin xlarge-max {
+	@media screen and (max-width: #{map-get(map-get($viewports, xlarge), max)}) {
+		@content;
+	}
+}
+
+@mixin xxlarge-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, xxlarge), min)}) {
+		@content;
+	}
+}
+
+@mixin xxlarge-only {
+	@media screen and (min-width: #{map-get(map-get($viewports, xxlarge), min)}) and (max-width: #{map-get(map-get($viewports, xxlarge), max)}) {
+		@content;
+	}
+}
+
+@mixin xxlarge-max {
+	@media screen and (max-width: #{map-get(map-get($viewports, xxlarge), max)}) {
+		@content;
+	}
+}
+
+@mixin xxxlarge-up {
+	@media screen and (min-width: #{map-get(map-get($viewports, xxxlarge), min)}) {
+		@content;
+	}
+}
+
+@mixin retina {
+	@media (resolution >= 1.3dppx) {
+		@content;
+	}
+}
+
+@mixin landscape {
+	@media screen and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin portrait {
+	@media screen and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin short-up {
+	@media screen and (height >= 48em) {
+		@content;
+	}
+}
+
+@mixin short-max {
+	@media screen and (height <= 48em) {
+		@content;
+	}
+}
+
+@mixin high-up {
+	@media screen and (height >= 67.5em) {
+		@content;
+	}
+}
+
+@mixin high-max {
+	@media screen and (height <= 67.5em) {
+		@content;
+	}
+}

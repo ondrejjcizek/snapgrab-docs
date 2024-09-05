@@ -1,0 +1,78 @@
+.xxlarge {
+	&--top {
+		padding-top: clamp(9.6rem, 15vw, 16rem);
+	}
+
+	&--bottom {
+		padding-bottom: clamp(9.6rem, 15vw, 16rem);
+	}
+}
+
+.xlarge {
+	&--top {
+		padding-top: clamp(4rem, 14vw, 14.4rem);
+	}
+
+	&--bottom {
+		padding-bottom: clamp(4rem, 14vw, 14.4rem);
+	}
+}
+
+.large {
+	&--top {
+		padding-top: clamp(4.8rem, 12vw, 12.8rem);
+	}
+
+	&--bottom {
+		padding-bottom: clamp(4.8rem, 12vw, 12.8rem);
+	}
+}
+
+.medium {
+	&--top {
+		padding-top: clamp(4rem, 9vw, 9.6rem);
+	}
+
+	&--bottom {
+		padding-bottom: clamp(4rem, 9vw, 9.6rem);
+	}
+}
+
+.smallMedium {
+	&--top {
+		padding-top: clamp(4rem, 8vw, 8rem);
+	}
+
+	&--bottom {
+		padding-bottom: clamp(4rem, 8vw, 8rem);
+	}
+}
+
+.small {
+	&--top {
+		padding-top: clamp(4rem, 6vw, 6.4rem);
+	}
+
+	&--bottom {
+		padding-bottom: clamp(4rem, 6vw, 6.4rem);
+	}
+}
+
+.xsmall {
+	&--top {
+		padding-top: clamp(1.6rem, 3.2vw, 3.2rem);
+	}
+
+	&--bottom {
+		padding-bottom: clamp(1.6rem, 3.2vw, 3.2rem);
+	}
+}
+
+.overflowed {
+	overflow: hidden;
+}
+
+section > .heading {
+	margin-bottom: clamp(4rem, 8vw, 8rem);
+	text-align: center;
+}

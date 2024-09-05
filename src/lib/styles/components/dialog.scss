@@ -1,0 +1,151 @@
+.dialog {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	&-wrapper {
+		position: fixed;
+		left: 0;
+		border: none;
+		border-radius: var(--radius-base);
+		max-width: 750px;
+		opacity: 0;
+		padding: 0;
+		width: calc(100% - 30px);
+		box-shadow:
+			rgb(0 0 0 / 0%) 0 0 0 0,
+			rgb(0 0 0 / 0%) 0 0 0 0,
+			rgb(0 0 0 / 10%) 0 10px 15px -3px,
+			rgb(0 0 0 / 10%) 0 4px 6px -4px;
+
+		button[data-ref='close'] {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			width: 48px;
+			height: 48px;
+			cursor: pointer;
+			border-radius: var(--radius-base);
+			overflow: hidden;
+			background-color: transparent;
+
+			@media (pointer: coarse) {
+				right: 16px;
+			}
+
+			@include hover {
+				i {
+					background: var(--color-grey-200);
+				}
+			}
+
+			i {
+				display: flex;
+				font-size: 2rem;
+				padding: 14px;
+				width: 100%;
+				opacity: 1;
+				transition: background 0.6s $easeOutExpo;
+				color: var(--color-text);
+			}
+		}
+
+		&::backdrop {
+			background: rgb(0 0 0 / 30%);
+			backdrop-filter: blur(4px);
+		}
+
+		&[open] {
+			animation: fade-in 0.6s $easeOutExpo forwards;
+		}
+
+		&[closing] {
+			display: block;
+			pointer-events: none;
+			inset: 0;
+			animation: fade-out 0.6s $easeOutExpo forwards;
+		}
+
+		&[open]::backdrop {
+			animation: fade-in 0.6s $easeOutExpo forwards;
+		}
+
+		&[closing]::backdrop {
+			animation: fade-out 0.6s $easeOutExpo forwards;
+		}
+	}
+
+	&-content {
+		padding: 24px 12px 24px 24px;
+		animation:
+			scale-in 0.6s $easeOutExpo forwards,
+			slide-up 0.6s $easeOutExpo forwards;
+		overflow-y: scroll;
+		overscroll-behavior: contain;
+		scrollbar-width: none;
+		max-height: 95dvh;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 100.06%;
+			width: 100%;
+			inset: 0;
+			z-index: -1;
+		}
+
+		.title--md {
+			margin-bottom: 24px;
+		}
+
+		.button {
+			margin-top: 32px;
+		}
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fade-out {
+		100% {
+			opacity: 0;
+		}
+
+		0% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes scale-in {
+		0% {
+			transform: scale(0.994);
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	@keyframes slide-up {
+		0% {
+			transform: translateY(0.5%);
+		}
+
+		100% {
+			transform: translateY(0%);
+		}
+	}
+}

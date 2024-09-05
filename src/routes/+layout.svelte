@@ -5,7 +5,7 @@
 
 	const { children }: Props = $props();
 
-	import '$lib/styles/main.scss';
+	// import '$lib/styles/main.scss';
 	import type { Snippet } from 'svelte';
 	import { browser } from '$app/environment';
 	import Lenis from 'lenis';
@@ -67,3 +67,7 @@
 </script>
 
 {@render children()}
+
+<style lang="scss" global>
+	@import 'src/lib/styles/global.scss'; /* Adjust the path relative to your layout file */
+</style>
