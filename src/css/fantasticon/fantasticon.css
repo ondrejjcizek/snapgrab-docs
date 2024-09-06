@@ -1,0 +1,42 @@
+:root {
+--icon-arrow-right: "\f200";
+--icon-arrow-left: "\f201";
+}
+@font-face {
+    font-family: "fantasticon";
+    src: url("./fantasticon.woff?870f6ee6100b4b3f991b2177e607b327") format("woff"),
+url("./fantasticon.woff2?870f6ee6100b4b3f991b2177e607b327") format("woff2"),
+url("./fantasticon.svg?870f6ee6100b4b3f991b2177e607b327#fantasticon") format("svg");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: fantasticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-right:before { content: var(--icon-arrow-right); }
+.icon-arrow-left:before { content: var(--icon-arrow-left); }
+.icon-x-mark:before {
+    content: "\f101";
+}
+.icon-school:before {
+    content: "\f102";
+}
+.icon-chevron-down:before {
+    content: "\f103";
+}
+.icon-beaker:before {
+    content: "\f104";
+}
+.icon-arrow-path:before {
+    content: "\f105";
+}
+.icon-arrow-down:before {
+    content: "\f106";
+}

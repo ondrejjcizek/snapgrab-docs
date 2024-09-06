@@ -1,0 +1,24 @@
+{
+	"extends": "stylelint-config-standard-scss",
+	"plugins": ["stylelint-scss"],
+	"rules": {
+		"at-rule-no-unknown": null,
+		"scss/at-rule-no-unknown": true,
+		"scss/comment-no-empty": null,
+		"block-no-empty": true,
+		"color-no-invalid-hex": true,
+		"selector-class-pattern": "^[.-]?[a-zA-Z][a-zA-Z0-9-_]+$",
+		"scss/dollar-variable-pattern": null,
+		"max-nesting-depth": null,
+		"no-duplicate-selectors": true,
+		"property-no-unknown": true,
+		"unit-no-unknown": true,
+		"no-descending-specificity": null,
+		"scss/no-global-function-names": true,
+		"color-function-notation": null,
+		"value-keyword-case": null,
+		"font-family-no-missing-generic-family-keyword": null,
+		"selector-id-pattern": null,
+		"selector-pseudo-element-colon-notation": "single"
+	}
+}

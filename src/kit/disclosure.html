@@ -1,0 +1,34 @@
+{{> htmlStartKit}} {{> kitHeader}}
+<main id="swup" class="transition-fade">
+	<div class="Section Section--appended">
+		<div class="Container Container--slim">
+			<div class="Disclosure" role="tablist" data-component="Disclosure">
+				<details class="is-active" open>
+					<summary role="tab" id="acc1-header" aria-controls="acc1-content" aria-expanded="true">
+						Is it accessible?
+					</summary>
+					<div class="Disclosure-content" role="tabpanel" id="acc1-content" aria-labelledby="acc1-header">
+						<p>Yes. It adheres to the WAI-ARIA design pattern.</p>
+					</div>
+				</details>
+				<details>
+					<summary role="tab" id="acc1-header" aria-controls="acc1-content" aria-expanded="false">
+						Is it styled?
+					</summary>
+					<div class="Disclosure-content" role="tabpanel" id="acc1-content" aria-labelledby="acc1-header">
+						<p>Yes. It comes with default styles that matches the other components' aesthetic.</p>
+					</div>
+				</details>
+				<details>
+					<summary role="tab" id="acc1-header" aria-controls="acc1-content" aria-expanded="false">
+						Is it animated?
+					</summary>
+					<div class="Disclosure-content" role="tabpanel" id="acc1-content" aria-labelledby="acc1-header">
+						<p>Yes. It's animated by default, but you can disable it if you prefer.</p>
+					</div>
+				</details>
+			</div>
+		</div>
+	</div>
+</main>
+{{> htmlEnd}}

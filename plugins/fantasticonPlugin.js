@@ -14,9 +14,7 @@ const generateFileHash = (filePath) => {
 export default function fantasticonPlugin(options = {}) {
 	const sourceDir = options.inputDir || path.resolve(__dirname, '../src/icons')
 	const outputDir = options.outputDir || path.resolve(__dirname, '../src/css/fantasticon')
-	const codepoints = {
-		'arrow-right': 0xf200,
-	}
+	const codepoints = options.codepoints
 
 	let fileHashes = new Map()
 
@@ -45,8 +43,29 @@ export default function fantasticonPlugin(options = {}) {
 				codepoints: codepoints,
 				...options,
 			})
-			// console.log('Fonts generated successfully.')
+
+			injectCssVariables()
 		}
+	}
+
+	const injectCssVariables = () => {
+		const cssFilePath = path.join(outputDir, 'fantasticon.css')
+		let cssContent = fs.readFileSync(cssFilePath, 'utf8')
+
+		const cssVariables = Object.entries(codepoints)
+			.map(([name, codepoint]) => `--icon-${name}: "\\${codepoint.toString(16)}";`)
+			.join('\n')
+
+		cssContent = `:root {\n${cssVariables}\n}\n${cssContent}`
+
+		Object.keys(codepoints).forEach(icon => {
+			const contentValue = `\\${codepoints[icon].toString(16)}`
+			const regex = new RegExp(`\\.icon-${icon}:before\\s*{[^}]*}`, 'g')
+			const replacement = `.icon-${icon}:before { content: var(--icon-${icon}); }`
+			cssContent = cssContent.replace(regex, replacement)
+		})
+
+		fs.writeFileSync(cssFilePath, cssContent, 'utf8')
 	}
 
 	return {
@@ -60,16 +79,9 @@ export default function fantasticonPlugin(options = {}) {
 				await generate(files)
 				if (process.env.NODE_ENV !== 'production') {
 					const watcher = chokidar.watch(`${sourceDir}/*.svg`, { persistent: true })
-					watcher.on('add', file => {
-						// console.log(`File added: ${file}`)
-						generate([file])
-					})
-					watcher.on('change', file => {
-						console.log(`File changed: ${file}`)
-						generate([file])
-					})
+					watcher.on('add', file => generate([file]))
+					watcher.on('change', file => generate([file]))
 					watcher.on('unlink', async file => {
-						console.log(`File removed: ${file}`)
 						fileHashes.delete(file)
 						await generate()
 					})
@@ -81,15 +93,12 @@ export default function fantasticonPlugin(options = {}) {
 		configureServer(server) {
 			const watcher = chokidar.watch(`${sourceDir}/*.svg`, { persistent: true })
 			watcher.on('add', file => {
-				// console.log(`File added: ${file}`)
 				generate([file]).then(() => server.ws.send({ type: 'full-reload', path: '*' }))
 			})
 			watcher.on('change', file => {
-				console.log(`File changed: ${file}`)
 				generate([file]).then(() => server.ws.send({ type: 'full-reload', path: '*' }))
 			})
 			watcher.on('unlink', async file => {
-				console.log(`File removed: ${file}`)
 				fileHashes.delete(file)
 				await generate()
 				server.ws.send({ type: 'full-reload', path: '*' })
