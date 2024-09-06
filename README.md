@@ -1,9 +1,4 @@
-# WDF Starter Kit
+# Snapgrab Docs
 
--   https://wdf-starter-kit.fe.wdf.agency/
--   node 20
--   pnpm i
--   pnpm dev
-
--   pnpm build
--   pnpm preview
+-   https://snapgrab-docs.vercel.app/
+-   https://github.com/ondrejjcizek/snapgrab
