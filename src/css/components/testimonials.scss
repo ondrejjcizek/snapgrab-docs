@@ -15,7 +15,7 @@
 		scroll-snap-type: x mandatory;
 		transition: height 0.6s $easeOutExpo;
 		touch-action: pan-x pan-y;
-		overflow-y: hidden;
+		overflow: scroll hidden;
 		scrollbar-width: none;
 
 		&::-webkit-scrollbar {
@@ -32,11 +32,12 @@
 		display: grid;
 		grid-template-columns: clamp(100px, 32vw, 328px) 1fr;
 		max-width: none;
-		scroll-snap-align: center;
+		scroll-snap-align: start;
 		flex: 0 0 100%;
 		scroll-snap-stop: always;
 		gap: clamp(40px, 8vw, 160px);
 		user-select: none;
+		height: max-content;
 
 		&:not(&:first-of-type) {
 			height: 0;

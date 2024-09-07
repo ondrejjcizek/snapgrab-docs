@@ -13,6 +13,10 @@
 		@include medium-up {
 			letter-spacing: 0;
 		}
+
+		span {
+			font-size: clamp(15px, 2.4vw, 24px); // 60 px
+		}
 	}
 
 	&--md {

@@ -28,7 +28,7 @@ body {
 	line-height: calc(24 / 16);
 	font-size: var(--font-size);
 	color: var(--font-color);
-	font-family: var(--font-inter);
+	font-family: var(--font-geist);
 	margin: 0;
 	padding: 0;
 	scrollbar-width: none;
@@ -45,8 +45,8 @@ h4,
 h5,
 h6 {
 	font-weight: 500;
-	font-family: var(--font-noto);
 	margin: 0;
+	font-family: var(--font-noto);
 }
 
 h1 {

@@ -6,7 +6,9 @@ export default class Testimonials extends Component {
 	constructor(element, options = {}) {
 		super(element, options)
 		this.snapgrab = new Snapgrab(this.element, {
-			autoplay: 6000
+			autoplay: 6000,
+			autoplayStopOnInteraction: true,
+			autoheight: true
 		})
 	}
 
