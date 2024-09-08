@@ -1,10 +1,12 @@
 import SwupBodyClassPlugin from '@swup/body-class-plugin'
+import { inject } from '@vercel/analytics'
 import { OverlayScrollbars } from 'overlayscrollbars'
 import Swup from 'swup'
 
 import { loadComponents, reinitComponents, removeComponents } from './core/componentUtils'
 import { scrollTo, scrollToId, startRaf, stopRaf } from './core/Lenis'
 
+inject()
 OverlayScrollbars({ 
 	target: document.body,
 	cancel: {
