@@ -4,7 +4,12 @@
 	letter-spacing: -1px;
 	font-weight: 400;
 	line-height: 120%;
-	color: var(--color-blue-500);
+
+	span {
+		font-size: clamp(15px, 2.4vw, 24px); // 60 px
+		letter-spacing: 1px;
+		font-style: italic;
+	}
 
 	&--lg {
 		font-size: clamp(2.5em, 4vw, 3.75em); // 60 px
@@ -12,10 +17,6 @@
 
 		@include medium-up {
 			letter-spacing: 0;
-		}
-
-		span {
-			font-size: clamp(15px, 2.4vw, 24px); // 60 px
 		}
 	}
 
@@ -40,18 +41,5 @@
 
 	&--xs {
 		font-size: 2.8rem;
-	}
-
-	span {
-		font-style: italic;
-		color: var(--color-green-500);
-	}
-
-	&--reverse {
-		color: var(--color-cream-300);
-
-		span {
-			color: var(--color-white);
-		}
 	}
 }

@@ -4,9 +4,9 @@
 }
 @font-face {
     font-family: "fantasticon";
-    src: url("./fantasticon.woff?870f6ee6100b4b3f991b2177e607b327") format("woff"),
-url("./fantasticon.woff2?870f6ee6100b4b3f991b2177e607b327") format("woff2"),
-url("./fantasticon.svg?870f6ee6100b4b3f991b2177e607b327#fantasticon") format("svg");
+    src: url("./fantasticon.woff?edd3d4fd61b5d9b038481a2514deb928") format("woff"),
+url("./fantasticon.woff2?edd3d4fd61b5d9b038481a2514deb928") format("woff2"),
+url("./fantasticon.svg?edd3d4fd61b5d9b038481a2514deb928#fantasticon") format("svg");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -28,15 +28,18 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .icon-school:before {
     content: "\f102";
 }
-.icon-chevron-down:before {
+.icon-github:before {
     content: "\f103";
 }
-.icon-beaker:before {
+.icon-chevron-down:before {
     content: "\f104";
 }
-.icon-arrow-path:before {
+.icon-beaker:before {
     content: "\f105";
 }
-.icon-arrow-down:before {
+.icon-arrow-path:before {
     content: "\f106";
+}
+.icon-arrow-down:before {
+    content: "\f107";
 }

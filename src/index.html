@@ -1,14 +1,44 @@
 {{> htmlStart}} {{> header}}
 <main id="swup" class="transition-fade">
-	<section class="smallMedium--top smallMedium--bottom">
+	<section class="smallMedium--top">
 		<div class="container">
 			<header>
-				<h1 class="heading heading--lg">Snapgrab <span>v1.4.1</span></h1>
+				<h1 class="heading">
+					<a href="https://github.com/ondrejjcizek/snapgrab" target="_blank"
+						><i class="icon icon-github"></i
+					></a>
+					Snapgrab
+					<span>v1.4.3</span>
+				</h1>
 				<p>
-					Snapgrab is a customizable and lightweight JavaScript slider component that provides an easy way to
-					create dynamic and interactive content sliders on your website.
+					Lightweight scroll snap slider with smooth navigation for touch devices, mouse dragging, and
+					trackpad swiping. It includes accessible controls, dynamic height adjustment, and customizable
+					autoplay.
 				</p>
 			</header>
+		</div>
+	</section>
+
+	<section class="smallMedium--bottom">
+		<div class="container container--narrow">
+			<div class="slider" role="region" id="sliderControls" data-component="Slider">
+				<ul class="slider__wrapper" aria-live="polite" data-ref="wrapper">
+					<li class="slider__slide" aria-hidden="false" aria-current="true">Slide 1</li>
+					<li class="slider__slide" aria-hidden="true">Slide 2</li>
+					<li class="slider__slide" aria-hidden="true">Slide 3</li>
+					<li class="slider__slide" aria-hidden="true">Slide 4</li>
+				</ul>
+				<div class="slider__buttons">
+					<button data-ref="prev" aria-label="Previous slide" aria-controls="sliderControls"></button>
+					<button data-ref="next" aria-label="Next slide" aria-controls="sliderControls"></button>
+				</div>
+				<div class="slider__dots" data-ref="dots" aria-label="Dots"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="smallMedium--top smallMedium--bottom">
+		<div class="container">
 			<div class="testimonials" role="region" data-component="Testimonials">
 				<ul class="testimonials__wrapper" aria-live="polite" data-ref="wrapper">
 					<li class="testimonials__slide" aria-hidden="false">
@@ -112,7 +142,7 @@
 					</li>
 				</ul>
 
-				<div class="testimonials__dots" data-ref="dots"></div>
+				<div class="testimonials__dots" data-ref="dots" aria-label="Dots"></div>
 
 				<div class="testimonials__buttons">
 					<button data-ref="prev" aria-label="Previous slide"></button>

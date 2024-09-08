@@ -140,6 +140,10 @@
 			transition: background 0.6s $easeOutExpo;
 			color: rgba(0, 0, 0, 60%);
 
+			&:after {
+				transition: color 0.6s $easeOutExpo;
+			}
+
 			&[data-ref='prev'] {
 				@include icon-after {
 					content: var(--icon-arrow-left);
