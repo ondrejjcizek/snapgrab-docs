@@ -436,21 +436,15 @@ export class Snapgrab {
      */
 	
 	handleNextClick() {
-		console.log('Next button clicked')
 		const totalSlides = this.wrapper.children.length
 		const slideWidth = this.wrapper.children[0].offsetWidth || 0
 		const visibleSlides = Math.floor(this.wrapper.offsetWidth / slideWidth)
 		const maxScrollLeft = (totalSlides - visibleSlides) * slideWidth
 
-		console.log('Current scrollLeft:', this.wrapper.scrollLeft)
-		console.log('Max scrollLeft:', maxScrollLeft)
-
 		if (this.wrapper.scrollLeft >= maxScrollLeft) {
-			console.log('Reached the end, resetting to first slide')
 			this.goToSlide(0)
 			this.updateActiveDot(0, visibleSlides - 1)
 		} else {
-			console.log('Scrolling to the next slide')
 			this.scrollSlides(1)
 		}
 
@@ -504,21 +498,13 @@ export class Snapgrab {
 		const totalSlides = this.wrapper.children.length
 		const maxScrollLeft = this.wrapper.scrollWidth - this.wrapper.clientWidth
 	
-		console.log('updateButtonState called')
-		console.log('Current scrollLeft:', this.wrapper.scrollLeft)
-		console.log('Max scrollable distance (scrollWidth - clientWidth):', maxScrollLeft)
-		console.log('Visible slides:', visibleSlides)
-		console.log('Total slides:', totalSlides)
-	
 		if (this.prev) {
 			const prevDisabled = this.wrapper.scrollLeft <= 0
-			console.log('Prev button disabled:', prevDisabled)
 			this.prev.toggleAttribute('disabled', prevDisabled)
 		}
 	
 		if (this.next) {
 			const nextDisabled = this.wrapper.scrollLeft >= maxScrollLeft
-			console.log('Next button disabled:', nextDisabled)
 			this.next.toggleAttribute('disabled', nextDisabled)
 		}
 	}
@@ -599,3 +585,4 @@ export class Snapgrab {
 		this.wrapper.removeEventListener('scroll', this.onScroll)
 	}
 }
+
