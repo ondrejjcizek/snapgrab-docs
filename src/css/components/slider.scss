@@ -11,6 +11,7 @@
 		overflow: scroll hidden;
 		transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 		scrollbar-width: none;
+		gap: 24px;
 
 		&::-webkit-scrollbar {
 			display: none;
@@ -25,7 +26,6 @@
 		scroll-snap-align: start;
 		scroll-snap-stop: normal;
 		padding: 24px;
-		margin-right: 24px;
 		height: max-content;
 		min-height: 200px;
 		min-width: 100%;

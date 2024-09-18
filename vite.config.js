@@ -105,6 +105,11 @@ export default defineConfig(({ mode }) => {
 		root: 'src',
 		css: {
 			devSourcemap: true,
+			preprocessorOptions: {
+				scss: {
+					api: 'modern',
+				},
+			}
 		},
 		build: {
 			manifest: false,

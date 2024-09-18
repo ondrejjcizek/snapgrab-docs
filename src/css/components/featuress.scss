@@ -1,0 +1,199 @@
+.featuress {
+	position: relative;
+
+	@include small-wide-max {
+		margin-bottom: 88px;
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: clamp(300px, 48vw, 480px);
+		justify-content: normal;
+		scroll-behavior: smooth;
+		scroll-snap-stop: always;
+		scroll-snap-type: x mandatory;
+		transition: height 0.6s $easeOutExpo;
+		touch-action: pan-x pan-y;
+		overflow-y: hidden;
+		gap: 24px;
+		scrollbar-width: none;
+
+		// margin-right: -24px;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		@include small-max {
+			grid-auto-columns: 75%;
+		}
+	}
+
+	&__slide {
+		position: relative;
+		max-width: none;
+		scroll-snap-align: start;
+		scroll-snap-stop: normal;
+		transition: transform 0.6s $easeOutExpo;
+		user-select: none;
+		min-height: clamp(330px, 53vw, 528px);
+
+		img {
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		a {
+			position: absolute;
+			left: 16px;
+			bottom: 16px;
+			display: flex;
+			flex-direction: column;
+			max-width: calc(100% - 32px);
+			padding: clamp(24px, 3.2vw, 32px);
+			width: 100%;
+			background-color: rgba(white, 0.8);
+			backdrop-filter: blur(12px);
+
+			@include hover {
+				.button--link {
+					color: var(--color-orange-500);
+				}
+			}
+
+			h3 {
+				font-size: clamp(2.3rem, 3vw, 3rem);
+				line-height: calc(38 / 30);
+				font-weight: 500;
+				color: var(--color-text);
+				margin-bottom: clamp(12px, 2.4vw, 24px);
+			}
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 32px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: fit-content;
+
+		@include small-wide-max {
+			top: unset;
+			bottom: -88px;
+			justify-content: space-between;
+			width: 100%;
+		}
+
+		button {
+			display: block;
+			height: 56px;
+			width: 56px;
+			border-radius: 50%;
+			background-color: var(--color-white);
+			cursor: pointer;
+			border: 1px solid var(--color-border);
+			transition: background 0.6s $easeOutExpo;
+			color: rgba(0, 0, 0, 60%);
+
+			&:after {
+				transition: color 0.6s $easeOutExpo;
+			}
+
+			&[data-ref='prev'] {
+				@include icon-after {
+					content: var(--icon-arrow-left);
+				}
+			}
+
+			&[data-ref='next'] {
+				@include icon-after {
+					content: var(--icon-arrow-right);
+				}
+			}
+
+			@include hover {
+				&:not([disabled]) {
+					background: var(--color-border);
+				}
+			}
+
+			&[disabled] {
+				cursor: default;
+
+				&:after,
+				&:before {
+					color: rgba(0, 0, 0, 10%);
+				}
+			}
+		}
+	}
+
+	&__dots {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+		margin-top: 12px;
+
+		button {
+			display: block;
+			height: 8px;
+			width: 8px;
+			border-radius: 50%;
+			cursor: pointer;
+			background: rgba(0, 0, 0, 42%);
+			transition: background 0.6s $easeOutExpo;
+
+			&:hover {
+				background: rgba(0, 0, 0, 54%);
+			}
+
+			&.is-active {
+				background: rgba(0, 0, 0, 80%);
+			}
+		}
+	}
+
+	.no-more-right {
+		animation: shake 0.5s ease;
+	}
+
+	.no-more-left {
+		animation: shake-left 0.5s ease;
+	}
+
+	@keyframes shake {
+		0%,
+		100% {
+			transform: translateX(0);
+		}
+
+		25% {
+			transform: translateX(-5px);
+		}
+
+		75% {
+			transform: translateX(5px);
+		}
+	}
+
+	@keyframes shake-left {
+		0%,
+		100% {
+			transform: translateX(0);
+		}
+
+		25% {
+			transform: translateX(5px);
+		}
+
+		75% {
+			transform: translateX(-5px);
+		}
+	}
+}

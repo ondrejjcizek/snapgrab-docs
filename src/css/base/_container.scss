@@ -17,6 +17,13 @@
 		max-width: 1024px;
 		margin: 0 auto;
 
+		&:has(> .button, [data-ref='next']) {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			max-width: unset;
+		}
+
 		&.mobile-left {
 			@include small-max {
 				display: flex;

@@ -426,29 +426,36 @@ export class Snapgrab {
      * Handles the click event for the previous button.
      */
 	handlePrevClick() {
-		this.handleUserInteraction() // Check and handle user interaction
+		this.handleUserInteraction()
 		this.scrollSlides(-1)
-		this.handleHeight() // Ensure recalculation after sliding
+		this.handleHeight()
 	}
 
 	/**
      * Handles the click event for the next button.
      */
+	
 	handleNextClick() {
-		this.handleUserInteraction() // Check and handle user interaction
+		console.log('Next button clicked')
 		const totalSlides = this.wrapper.children.length
 		const slideWidth = this.wrapper.children[0].offsetWidth || 0
 		const visibleSlides = Math.floor(this.wrapper.offsetWidth / slideWidth)
 		const maxScrollLeft = (totalSlides - visibleSlides) * slideWidth
 
+		console.log('Current scrollLeft:', this.wrapper.scrollLeft)
+		console.log('Max scrollLeft:', maxScrollLeft)
+
 		if (this.wrapper.scrollLeft >= maxScrollLeft) {
+			console.log('Reached the end, resetting to first slide')
 			this.goToSlide(0)
 			this.updateActiveDot(0, visibleSlides - 1)
 		} else {
+			console.log('Scrolling to the next slide')
 			this.scrollSlides(1)
 		}
 
-		this.handleHeight() // Ensure recalculation after sliding
+		this.updateButtonState()
+		this.handleHeight()
 	}
 
 	/**
@@ -495,14 +502,24 @@ export class Snapgrab {
 		const slideWidth = this.wrapper.children[0]?.offsetWidth || 0
 		const visibleSlides = Math.floor(this.wrapper.offsetWidth / slideWidth)
 		const totalSlides = this.wrapper.children.length
-		const maxScrollLeft = (totalSlides - visibleSlides) * slideWidth
-
+		const maxScrollLeft = this.wrapper.scrollWidth - this.wrapper.clientWidth
+	
+		console.log('updateButtonState called')
+		console.log('Current scrollLeft:', this.wrapper.scrollLeft)
+		console.log('Max scrollable distance (scrollWidth - clientWidth):', maxScrollLeft)
+		console.log('Visible slides:', visibleSlides)
+		console.log('Total slides:', totalSlides)
+	
 		if (this.prev) {
-			this.prev.toggleAttribute('disabled', this.wrapper.scrollLeft <= 0)
+			const prevDisabled = this.wrapper.scrollLeft <= 0
+			console.log('Prev button disabled:', prevDisabled)
+			this.prev.toggleAttribute('disabled', prevDisabled)
 		}
-
+	
 		if (this.next) {
-			this.next.toggleAttribute('disabled', this.wrapper.scrollLeft >= maxScrollLeft)
+			const nextDisabled = this.wrapper.scrollLeft >= maxScrollLeft
+			console.log('Next button disabled:', nextDisabled)
+			this.next.toggleAttribute('disabled', nextDisabled)
 		}
 	}
 
